@@ -1,4 +1,4 @@
-pragma solidity 0.8.14;
+pragma solidity ^0.8.0;
 
 contract VotingContract {
     uint256 constant MAX_VOTERS = 100000;
