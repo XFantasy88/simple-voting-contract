@@ -1,7 +1,7 @@
-pragma solidity 0.8.14;
+pragma solidity ^0.8.0;
 
 contract VotingContract {
-    uint256 constant MAX_VOTERS = 100000;
+    uint256 constant MAX_VOTERS = 1000000;
 
     string private _votePurpose;
     uint256 public _totalVotes;
@@ -9,6 +9,8 @@ contract VotingContract {
     mapping(uint256 => uint256) private _teamInfo;
 
     address private owner;
+    
+    bool public _isVoteOpen;
 
     struct Voter {
         bool isAuth;
@@ -21,6 +23,7 @@ contract VotingContract {
         _votePurpose = name;
         _teamCount = teamCount;
         owner = msg.sender;
+        _isVoteOpen = false;
     }
 
     modifier ownerOnly() {
