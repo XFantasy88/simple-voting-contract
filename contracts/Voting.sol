@@ -1,7 +1,7 @@
 pragma solidity ^0.8.0;
 
 contract VotingContract {
-    uint256 constant MAX_VOTERS = 100000;
+    uint256 constant MAX_VOTERS = 1000000;
 
     string private _votePurpose;
     uint256 public _totalVotes;
