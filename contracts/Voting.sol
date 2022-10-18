@@ -9,6 +9,8 @@ contract VotingContract {
     mapping(uint256 => uint256) private _teamInfo;
 
     address private owner;
+    
+    bool public _isVoteOpen;
 
     struct Voter {
         bool isAuth;
@@ -21,6 +23,7 @@ contract VotingContract {
         _votePurpose = name;
         _teamCount = teamCount;
         owner = msg.sender;
+        _isVoteOpen = false;
     }
 
     modifier ownerOnly() {
